@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Brand Template</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #1B2C56;
+      --royal: #2B52C8;
+      --cream: #FAF8F4;
+      --cream-dark: #F2EDE6;
+      --gold: #C4A35A;
+      --sky: #D4E0F7;
+      --charcoal: #2C2C2C;
+      --warm-gray: #7A7468;
+      --divider: #E0D8CE;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* NAV */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      background: rgba(250,248,244,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .nav-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      color: var(--warm-gray);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 72px;
+    }
+
+    .hero-left {
+      background: var(--navy);
+      color: white;
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-tag {
+      color: var(--gold);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 24px;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .hero-name span {
+      color: #8BAAE5;
+    }
+
+    .hero-subtitle {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #D4E0F7;
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+
+    .hero-intro {
+      max-width: 500px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 40px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .badge {
+      padding: 8px 16px;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-right {
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-placeholder {
+      width: 80%;
+      height: 80%;
+      border: 2px dashed var(--divider);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--warm-gray);
+      font-size: 1rem;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--royal);
+      font-size: 0.7rem;
+      margin-bottom: 18px;
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: var(--navy);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 72px;
+    }
+
+    .about-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      color: var(--navy);
+      font-size: 1.3rem;
+    }
+
+    .about-body p {
+      margin-bottom: 20px;
+    }
+
+    /* CARDS */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--divider);
+      padding: 32px;
+      border-radius: 12px;
+    }
+
+    .card-label {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--royal);
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .card-text {
+      color: var(--warm-gray);
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--royal), var(--navy));
+      text-align: center;
+      color: white;
+    }
+
+    .cta-section .section-heading {
+      color: white;
+    }
+
+    .cta-text {
+      max-width: 600px;
+      margin: 0 auto 32px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      background: white;
+      color: var(--navy);
+      border-radius: 40px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.8rem;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid,
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .container {
+        padding: 0 24px;
+      }
+
+      .hero-left {
+        padding: 60px 32px;
+      }
+
+      .hero-right {
+        min-height: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="#" class="nav-name">[NAME / BRAND]</a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#writing">Writing</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <span class="hero-tag">
+        [LOCATION / TAGLINE]
+      </span>
+
+      <h1 class="hero-name">
+        Firstname<br>
+        <span>Lastname</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        ROLE · TITLE · SPECIALTY
+      </p>
+
+      <p class="hero-intro">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <div class="hero-badges">
+        <span class="badge">Badge One</span>
+        <span class="badge">Badge Two</span>
+        <span class="badge">Badge Three</span>
+        <span class="badge">Badge Four</span>
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+
+      <div class="hero-placeholder">
+        IMAGE / VIDEO / PHOTO PLACEHOLDER
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-label">
+        About
+      </div>
+
+      <h2 class="section-heading">
+        Your Story or Mission Goes Here
+      </h2>
+
+      <div class="about-grid">
+
+        <div>
+          <div class="about-quote">
+            “Insert signature quote, belief statement, or mission line here.”
+          </div>
+        </div>
+
+        <div class="about-body">
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+          </p>
+
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES / WORK -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-label">
+        Services
+      </div>
+
+      <h2 class="section-heading">
+        What You Offer
+      </h2>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-label">01</div>
+          <div class="card-title">Service Title</div>
+          <div class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">02</div>
+          <div class="card-title">Service Title</div>
+          <div class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">03</div>
+          <div class="card-title">Service Title</div>
+          <div class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PORTFOLIO / PRESS / TESTIMONIALS -->
+
+  <section id="portfolio">
+
+    <div class="container">
+
+      <div class="section-label">
+        Portfolio
+      </div>
+
+      <h2 class="section-heading">
+        Featured Work or Testimonials
+      </h2>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-label">Case Study</div>
+          <div class="card-title">Project or Client Name</div>
+          <div class="card-text">
+            Short summary or testimonial placeholder text.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Interview</div>
+          <div class="card-title">Publication or Podcast</div>
+          <div class="card-text">
+            Short summary or testimonial placeholder text.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Feature</div>
+          <div class="card-title">Media Mention</div>
+          <div class="card-text">
+            Short summary or testimonial placeholder text.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta-section" id="writing">
+
+    <div class="container">
+
+      <div class="section-label">
+        Newsletter / CTA
+      </div>
+
+      <h2 class="section-heading">
+        Invite People Into Your World
+      </h2>
+
+      <p class="cta-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+      </p>
+
+      <a href="#" class="btn">
+        Subscribe / Learn More
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- RESOURCES -->
+
+  <section id="resources">
+
+    <div class="container">
+
+      <div class="section-label">
+        Resources
+      </div>
+
+      <h2 class="section-heading">
+        Helpful Links or Downloads
+      </h2>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-title">Resource Title</div>
+          <div class="card-text">
+            Short description of the resource.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Resource Title</div>
+          <div class="card-text">
+            Short description of the resource.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Resource Title</div>
+          <div class="card-text">
+            Short description of the resource.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-label">
+        Contact
+      </div>
+
+      <h2 class="section-heading">
+        Connect With Me
+      </h2>
+
+      <p>
+        [EMAIL ADDRESS]
+      </p>
+
+      <p>
+        [SOCIAL LINKS]
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © [YEAR] [NAME / BRAND]. All rights reserved.
+  </footer>
+
+</body>
+</html>
